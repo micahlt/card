@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --accent-color: indianred;
+  --background-main: white;
+  --text-color: rgb(33, 33, 33);
+}
+
+body {
+  overflow: hidden;
+}
+
+.editor::-webkit-scrollbar {
+  width: 1em;
+}
+
+.editor::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.editor::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.main {
+  height: 90vh;
+  width: 100vw;
+  z-index: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.topnav {
+  width: 100%;
+  height: 10vh;
+  background-color: indianred;
+  box-shadow: rgba(0,0,0,0.5) 0 0 10px;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 3em;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  padding: 20px;
+  float: left;
+  font-weight: 700;
+}
+
+.links {
+  padding: 30px;
+  float: right;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+
+.editor {
+  background-color: var(--main-background);
+  width: 67vw;
+  overflow-y: scroll !important;
+  text-align: center;
+  align-items: center;
+}
+
+.preview {
+  width: 33vw;
+  overflow: hidden;
+  background-color: var(--main-background);
+}
+
+.edit-box {
+  text-align: left;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Roboto', sans-serif;
+  width: 80%;
+  box-shadow: rgba(0,0,0,0.3) 0 0 20px;
+  min-height: 200px;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.box-container {
+  text-align: left;
+  padding: 40px;
+}
+
+@keyframes flip {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(180deg);
+  }
+}
+
+@keyframes unflip {
+  from {
+    transform: rotateX(180deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+.checkbox {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 18px !important;
+}
+
+.flipping {
+  animation-name: flip;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+}
+
+.flipped {
+  transform: rotateX(180deg);
+}
+
+.unflipping {
+  animation-name: unflip;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+}
+
+.label {
+  font-size: 23px;
+  margin-top: -20px;
+  margin-left: 20px;
+  color: var(--text-color);
+}
+
+.box-container > a:hover {
+  text-shadow: rgba(0,0,0,0.8) 0 0 17px;
+  transition: 0.5s;
+}
